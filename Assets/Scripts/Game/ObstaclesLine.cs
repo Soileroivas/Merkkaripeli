@@ -105,7 +105,7 @@ public class ObstaclesLine : MonoBehaviour
         // Get random amount of obstacles that should be spawned into the line.
         int obstaclesAmount = Random.Range(minObstacles, maxObstacles);
         // Get all available lanes.
-        List<int> availableLanes = new List<int>() {-2, -1, 0, 1, 2};
+        List<int> availableLanes = new List<int>() {-3, -2, -1, 0, 1, 2, 3};
         for(int i = 0; i < obstaclesAmount; i++)
         {
             // Get random lane index.

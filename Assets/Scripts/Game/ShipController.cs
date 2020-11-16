@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class RocketController : MonoBehaviour
+public class ShipController : MonoBehaviour
 {
     [Range(0, 9.5f)]
     public float speed = 8.0f;
@@ -83,7 +83,7 @@ public class RocketController : MonoBehaviour
     public void MoveLeft()
     {
         // If it's not the first lane.
-        if(lane > -2)
+        if(lane > -3)
         {
             // Play move left animation.
             anim.Play("Move-Left");
@@ -99,7 +99,7 @@ public class RocketController : MonoBehaviour
     public void MoveRight()
     {
         // If it's not the last lane.
-        if(lane < 2)
+        if(lane < 3)
         {
             // Play move right animation.
             anim.Play("Move-Right");

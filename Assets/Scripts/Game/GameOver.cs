@@ -5,7 +5,7 @@ public class GameOver : MonoBehaviour
 {
     public int continuePrice;
 
-    public RocketController rocketController;
+    public ShipController shipController;
     public GameObject menu;
     public TextMeshProUGUI priceText;
     public Animation notEnough;
@@ -30,7 +30,7 @@ public class GameOver : MonoBehaviour
     {
         // Used to disable pause/resume function when player crashed.
         crashed = true;
-        rocketController.Crashed();
+        shipController.Crashed();
         // Play game over window open animation.
         anim.Play("Game-Over-In");
         // Disable game menu gameobject with all buttons.

@@ -5183,8 +5183,8 @@ GameObject:
   - component: {fileID: 117038706}
   - component: {fileID: 117038707}
   - component: {fileID: 117038708}
-  - component: {fileID: 117038709}
   - component: {fileID: 117038705}
+  - component: {fileID: 117038709}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -5398,19 +5398,19 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 16266b527bdc02849b3b572de3097fc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37f6615722120b14a87e58981e232461, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 3.34, y: 4.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &117038709
-CircleCollider2D:
+--- !u!70 &117038709
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5422,9 +5422,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.7
+  m_Offset: {x: 0.002813816, y: -0.21493995}
+  m_Size: {x: 1.6745996, y: 2.4312274}
+  m_Direction: 0
 --- !u!224 &187697768 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7428378068253508650, guid: bdf6e360130e68f44ae1bb9c76596fae, type: 3}
@@ -6029,7 +6029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd8af1e53e76a547ba78d3d5f4dc46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketController: {fileID: 117038704}
+  shipController: {fileID: 0}
 --- !u!111 &393016764
 Animation:
   m_ObjectHideFlags: 0
@@ -18534,7 +18534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bf47e479165f3b74ba6b8157cb150a3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 412af4a2468ab3c45990d6eb39bc1d73, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -20571,7 +20571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continuePrice: 20
-  rocketController: {fileID: 117038704}
+  shipController: {fileID: 117038704}
   menu: {fileID: 1425658960}
   priceText: {fileID: 1266296158}
   notEnough: {fileID: 79114474}

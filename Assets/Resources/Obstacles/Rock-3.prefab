@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 4a62755b237889048b1fe5a73c3fb7a0, type: 3}
+  m_Sprite: {fileID: -4209556597541047147, guid: c2a5d912f30d5014289f476487bf1631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,8 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6821600259844275942}
   - component: {fileID: 1037101133620014118}
-  - component: {fileID: 7351255792057060445}
   - component: {fileID: -544774397829606681}
+  - component: {fileID: 3397187919933826092}
   m_Layer: 0
   m_Name: Rock-3
   m_TagString: Untagged
@@ -128,22 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257cf453f50998040bad726350d356b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &7351255792057060445
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6821600259844275943}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.2
 --- !u!82 &-544774397829606681
 AudioSource:
   m_ObjectHideFlags: 0
@@ -240,3 +224,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!70 &3397187919933826092
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6821600259844275943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.021894993, y: 0.007299665}
+  m_Size: {x: 0.95621157, y: 0.69341195}
+  m_Direction: 1

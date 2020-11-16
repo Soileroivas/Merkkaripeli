@@ -2,7 +2,7 @@
 
 public class Pause : MonoBehaviour
 {
-    public RocketController rocketController;
+    public ShipController shipController;
 
     #if UNITY_ANDROID
         private bool paused;
@@ -19,7 +19,7 @@ public class Pause : MonoBehaviour
     public void PauseGame()
     {
         // Pause player controller.
-        rocketController.Pause();
+        shipController.Pause();
         // Open pause winodw.
         animationController.OpenWindow();
         // Used to check if game is paused/resumed.
@@ -33,7 +33,7 @@ public class Pause : MonoBehaviour
     {
         
         // Resume player controller.
-        rocketController.Resume();
+        shipController.Resume();
         // Close pause window.
         animationController.CloseWindow();
         // Used to check if game is paused/resumed.
