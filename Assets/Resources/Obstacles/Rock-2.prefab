@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6633369190938926051}
   - component: {fileID: 919229744565111075}
   - component: {fileID: 1450523164901708628}
-  - component: {fileID: 8363863988644266163}
+  - component: {fileID: 5339469539813594250}
   m_Layer: 0
   m_Name: Rock-2
   m_TagString: Untagged
@@ -142,8 +142,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!70 &8363863988644266163
-CapsuleCollider2D:
+--- !u!60 &5339469539813594250
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -155,9 +155,29 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000003131099, y: -0.026265565}
-  m_Size: {x: 1.0000002, y: 0.60140187}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.3413083, y: -0.025821773}
+      - {x: 0.15612265, y: 0.02167466}
+      - {x: -0.10855409, y: 0.21834695}
+      - {x: -0.39180607, y: 0.06833267}
+      - {x: -0.44944203, y: 0.013647914}
+      - {x: -0.4571356, y: -0.08208438}
+      - {x: -0.3612495, y: -0.14544839}
+      - {x: -0.12598783, y: -0.11917344}
+      - {x: 0.25642103, y: -0.26021647}
+      - {x: 0.43811008, y: -0.2142328}
+      - {x: 0.44007397, y: -0.093661964}
 --- !u!1 &6633369191340962717
 GameObject:
   m_ObjectHideFlags: 0

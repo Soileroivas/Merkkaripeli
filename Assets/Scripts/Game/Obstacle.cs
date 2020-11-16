@@ -9,7 +9,7 @@ public class Obstacle : MonoBehaviour
     void Start()
     {
         // Randomly set the rotation speed.
-        speed = Random.Range(-1.0f, 1.0f);
+       // speed = Random.Range(-1.0f, 1.0f);
         audioSource = this.GetComponent<AudioSource>();
         crashed = false;
     }

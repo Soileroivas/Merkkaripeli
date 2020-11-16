@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 201891671802682961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7312544164201824922}
   m_RootOrder: 0
@@ -92,8 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7312544164201824922}
   - component: {fileID: 4177117359304119921}
-  - component: {fileID: 6680210521580152525}
   - component: {fileID: -692642545742691364}
+  - component: {fileID: 5575824946289079067}
   m_Layer: 0
   m_Name: Rock-4
   m_TagString: Untagged
@@ -128,22 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257cf453f50998040bad726350d356b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &6680210521580152525
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571792820617027741}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0033298135, y: 0.010711029}
-  serializedVersion: 2
-  m_Radius: 0.1295852
 --- !u!82 &-692642545742691364
 AudioSource:
   m_ObjectHideFlags: 0
@@ -240,3 +224,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &5575824946289079067
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571792820617027741}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.3236556, y: 0.14712618}
+      - {x: -0.17363095, y: 0.25796294}
+      - {x: -0.35185608, y: 0.13172387}
+      - {x: -0.44594854, y: 0.001150569}
+      - {x: -0.3036754, y: -0.2603633}
+      - {x: -0.06294662, y: -0.32353535}
+      - {x: 0.24296126, y: -0.3473729}
+      - {x: 0.3115544, y: -0.26827717}
+      - {x: 0.3948555, y: -0.14609735}
+      - {x: 0.4262179, y: 0.028779685}

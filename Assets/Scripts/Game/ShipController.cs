@@ -83,7 +83,7 @@ public class ShipController : MonoBehaviour
     public void MoveLeft()
     {
         // If it's not the first lane.
-        if(lane > -3)
+        if(lane > -4)
         {
             // Play move left animation.
             anim.Play("Move-Left");
@@ -99,7 +99,7 @@ public class ShipController : MonoBehaviour
     public void MoveRight()
     {
         // If it's not the last lane.
-        if(lane < 3)
+        if(lane < 4)
         {
             // Play move right animation.
             anim.Play("Move-Right");

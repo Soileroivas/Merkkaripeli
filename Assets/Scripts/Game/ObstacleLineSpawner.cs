@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class ObstacleLineSpawner : MonoBehaviour
 {
-    [Range(0, 4)]
+    [Range(0, 7)]
     public int minObstacles, maxObstacles;
     [Range(0.2f, 0.8f)]
     public float spawnPlace;
     [Range(0, 1.5f)]
     public float randomizeObstaclesOffest;
-    [Range(0, 1.0f)]
+    [Range(0, 2.0f)]
     public float coinSpawnRate;
 
     public static ObstacleLineSpawner instance;

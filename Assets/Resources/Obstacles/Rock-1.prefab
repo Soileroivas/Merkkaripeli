@@ -92,8 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2605563553090866112}
   - component: {fileID: 8423814363991120128}
-  - component: {fileID: 2055624148592195963}
   - component: {fileID: -7533703398398971381}
+  - component: {fileID: 6513315064797892002}
   m_Layer: 0
   m_Name: Rock-1
   m_TagString: Untagged
@@ -128,22 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257cf453f50998040bad726350d356b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &2055624148592195963
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2605563553090866113}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.017052412}
-  serializedVersion: 2
-  m_Radius: 0.376208
 --- !u!82 &-7533703398398971381
 AudioSource:
   m_ObjectHideFlags: 0
@@ -240,3 +224,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &6513315064797892002
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605563553090866113}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.12544689, y: 0.27687377}
+      - {x: -0.32052082, y: 0.1703352}
+      - {x: -0.3236865, y: -0.25098813}
+      - {x: -0.10651705, y: -0.3697035}
+      - {x: 0.26426437, y: -0.17504334}
+      - {x: 0.29080963, y: 0.15052372}

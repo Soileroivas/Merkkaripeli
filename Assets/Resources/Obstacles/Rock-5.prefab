@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2609432361290441355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4864085113900875328}
   m_RootOrder: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4864085113900875328}
   - component: {fileID: 2234851480932199083}
   - component: {fileID: 5807654270382112518}
-  - component: {fileID: 7982935552365192067}
+  - component: {fileID: 7379173665042367484}
   m_Layer: 0
   m_Name: Rock-5
   m_TagString: Untagged
@@ -224,8 +224,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!70 &7982935552365192067
-CapsuleCollider2D:
+--- !u!60 &7379173665042367484
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -237,6 +237,24 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0049717436, y: 0.002948433}
-  m_Size: {x: 0.32717913, y: 0.14838926}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.37258524, y: 0.16851063}
+      - {x: -0.31170708, y: 0.17293203}
+      - {x: -0.47916672, y: -0.0244084}
+      - {x: -0.3965929, y: -0.16729966}
+      - {x: -0.28473657, y: -0.2027893}
+      - {x: -0.026833355, y: -0.21706836}
+      - {x: 0.3078788, y: -0.14976993}
+      - {x: 0.39729777, y: -0.098864496}
+      - {x: 0.48782507, y: 0.04054472}

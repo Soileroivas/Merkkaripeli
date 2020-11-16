@@ -5200,14 +5200,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117038702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.886, y: -2.328, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2.328, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1729767905}
   - {fileID: 773294847}
   m_Father: {fileID: 906634056}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.4}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &117038704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5397,8 +5397,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 37f6615722120b14a87e58981e232461, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 6674758313285917887, guid: 16266b527bdc02849b3b572de3097fc6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19125,11 +19125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59742e369d5368418105d92d1b293b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minObstacles: 3
-  maxObstacles: 4
+  minObstacles: 4
+  maxObstacles: 7
   spawnPlace: 0.3
   randomizeObstaclesOffest: 1.5
-  coinSpawnRate: 0.5
+  coinSpawnRate: 1.2
 --- !u!1 &1266296155
 GameObject:
   m_ObjectHideFlags: 0
