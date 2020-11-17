@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.Advertisements;
 
 public class GameOver : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class GameOver : MonoBehaviour
         anim = this.GetComponent<Animation>();
         priceText.text = continuePrice.ToString();
         crashed = false;
+
     }
+    
 
     // When player crashes to obstacle.
     public void Crashed()
