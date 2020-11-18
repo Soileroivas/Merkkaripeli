@@ -10,7 +10,10 @@ public class Garage : MonoBehaviour
     public Transform rocket, part;
     public Animation notEnough;
 
+    public Transform boat, shopPart;
     private List<GameObject> rocketItems, partItems;
+
+    List<GameObject> boatItems, shopItems;
     
     private int partIndex = 0;
 
@@ -39,7 +42,7 @@ public class Garage : MonoBehaviour
     public void Next()
     {
         // Check whether the active part is not the last.
-        if(partIndex < partItems.Count - 1)
+        if(partIndex < /*partItems*/shopItems.Count - 1)
         {
             // Loads next part.
             partIndex++;
@@ -52,13 +55,13 @@ public class Garage : MonoBehaviour
     public void Buy()
     {
         // Take part script from the active part.
-        Part part = partItems[partIndex].GetComponent<Part>();
+        Part part = /*partItems*/shopItems[partIndex].GetComponent<Part>();
         
         // Check if player has enough money to buy a part.
         if(Wallet.GetAmount() >= part.price)
         {
             // Save bought part value.
-            PlayerPrefs.SetInt("PartBought-" + partItems[partIndex].name, 1);
+            PlayerPrefs.SetInt("PartBought-" + /*partItems*/shopItems[partIndex].name, 1);
             // Loas add/remove button.
             LoadButton();
             // Subract part price from player wallet.
@@ -75,7 +78,7 @@ public class Garage : MonoBehaviour
     public void Add()
     {
         // Save added part value.
-        PlayerPrefs.SetInt("PartAdded-" + partItems[partIndex].name, 1);
+        PlayerPrefs.SetInt("PartAdded-" + /*partItems*/shopItems[partIndex].name, 1);
         // Load remove button.
         LoadButton();
         // Load rocket with added part.
@@ -86,7 +89,7 @@ public class Garage : MonoBehaviour
     public void Remove()
     {
         // Save removed part value.
-        PlayerPrefs.SetInt("PartAdded-" + partItems[partIndex].name, 0);
+        PlayerPrefs.SetInt("PartAdded-" + /*partItems*/shopItems[partIndex].name, 0);
         // Load add button.
         LoadButton();
         // Load rocket with removed part.
@@ -97,20 +100,35 @@ public class Garage : MonoBehaviour
     private void LoadItems()
     {
         // Load parts for the rocket.
-        rocketItems = new List<GameObject>();
-        foreach(Transform item in rocket)
+        //rocketItems = new List<GameObject>();
+        boatItems = new List<GameObject>();
+
+        //foreach(Transform item in rocket)
+        //{
+        //    if(item.name != "Base")
+        //    {
+        //        rocketItems.Add(item.gameObject);
+        //    }
+        //}
+        foreach (Transform item in boat)
         {
-            if(item.name != "Base")
-            {
-                rocketItems.Add(item.gameObject);
-            }
+            if (item.name != "Base")
+                boatItems.Add(item.gameObject);
+
         }
 
         // Load parts for the shop.
-        partItems = new List<GameObject>();
-        foreach(Transform item in part)
+        //partItems = new List<GameObject>();
+        shopItems = new List<GameObject>();
+
+        //foreach(Transform item in part)
+        //{
+        //    partItems.Add(item.gameObject);
+        //}
+
+        foreach (Transform item in shopPart)
         {
-            partItems.Add(item.gameObject);
+            shopItems.Add(item.gameObject);
         }
     }
 
@@ -118,14 +136,22 @@ public class Garage : MonoBehaviour
     private void LoadRocket()
     {
         // Cycle between all rocket parts.
-        for(int i = 0; i < rocketItems.Count; i++)
+        //for(int i = 0; i < rocketItems.Count; i++)
+        for (int i = 0; i < boatItems.Count; i++)
         {
             // Get value if rocket part is added.
-            bool partAdded = PlayerPrefs.GetInt("PartAdded-" + partItems[i].name, 0) == 1 ? true : false;
+            bool partAdded = PlayerPrefs.GetInt("PartAdded-" + /*partItems*/shopItems[i].name, 0) == 1 ? true : false;
+
+            //if (PlayerPrefs.GetInt("PartAdded-" + partItems[i].name, 0) == 1)
+            //    partAdded = true;
+            //else
+            //    partAdded = false;
+
             // Load rocket part gameobject.
-            GameObject part = rocketItems[i];      
+            //GameObject part = rocketItems[i];   
+            GameObject shopPart = boatItems[i];
             // Enable or disable rocket part gameobject according to partAdded value.
-            part.SetActive(partAdded);
+            shopPart.SetActive(partAdded);
         }
     }
 
@@ -133,22 +159,24 @@ public class Garage : MonoBehaviour
     private void LoadPart()
     {
         // Cycle between all shop parts.
-        for(int i = 0; i < partItems.Count; i++)
+        //for(int i = 0; i < partItems.Count; i++)
+        for (int i = 0; i < shopItems.Count; i++)
         {
             // Load shop part gameobject.
-            GameObject part = partItems[i];
+            //GameObject part = partItems[i];
+            GameObject shopPart = shopItems[i];
 
             // Check the active part.
-            if(i == partIndex)
+            if (i == partIndex)
             {
                 // Enable and change name for active part.
-                partName.text = part.name;
-                part.SetActive(true);                
+                partName.text = shopPart.name;
+                shopPart.SetActive(true);                
             }   
             else
             {   
                 // Otherwise disable part gameobject.
-                part.SetActive(false);
+                shopPart.SetActive(false);
             }         
         }
     }
@@ -157,12 +185,14 @@ public class Garage : MonoBehaviour
     private void LoadButton()
     {
         // Get value if part is bought.
-        bool partBought = PlayerPrefs.GetInt("PartBought-" + partItems[partIndex].name, 0) == 1 ? true : false;
-        if(partBought)
+        //bool partBought = PlayerPrefs.GetInt("PartBought-" + partItems[partIndex].name, 0) == 1 ? true : false;
+        bool partBought = PlayerPrefs.GetInt("PartBought-" + shopItems[partIndex].name, 0) == 1 ? true : false;
+        if (partBought)
         {
             // Get value if part is added to the rocket.
-            bool partAdded = PlayerPrefs.GetInt("PartAdded-" + partItems[partIndex].name, 0) == 1 ? true : false;
-            if(partAdded)
+            //bool partAdded = PlayerPrefs.GetInt("PartAdded-" + partItems[partIndex].name, 0) == 1 ? true : false;
+            bool partAdded = PlayerPrefs.GetInt("PartAdded-" + shopItems[partIndex].name, 0) == 1 ? true : false;
+            if (partAdded)
             {
                 // Display remove button.
                 DisplayButton(false, false, true);
@@ -177,8 +207,9 @@ public class Garage : MonoBehaviour
         {
             // Display buy button with part price;
             DisplayButton(true, false, false);
-            Part part = partItems[partIndex].GetComponent<Part>();
-            partPrice.text = part.price.ToString();
+            //Part part = partItems[partIndex].GetComponent<Part>();
+            Part shopPart = shopItems[partIndex].GetComponent<Part>();
+            partPrice.text = shopPart.price.ToString();
         }
     }
 
