@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Garage : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Garage : MonoBehaviour
     public Transform rocket, part;
     public Animation notEnough;
 
+    public GameObject BoatPrefab;
     public Transform boat, shopPart;
     private List<GameObject> rocketItems, partItems;
 
@@ -82,6 +84,7 @@ public class Garage : MonoBehaviour
         // Load remove button.
         LoadButton();
         // Load rocket with added part.
+        BoatPrefab.GetComponent<SpriteRenderer>().sprite = shopItems[partIndex].GetComponent<Image>().sprite;
         LoadRocket();
     }
 
@@ -118,7 +121,7 @@ public class Garage : MonoBehaviour
         }
     }
 
-    // Load rocket parts.
+    //Load rocket parts.
     private void LoadRocket()
     {
         // Cycle between all rocket parts.
@@ -126,7 +129,7 @@ public class Garage : MonoBehaviour
         for (int i = 0; i < boatItems.Count; i++)
         {
             // Get value if rocket part is added.
-            bool partAdded = PlayerPrefs.GetInt("PartAdded-" + shopItems[i].name, 0) == 1 ? true : false;  
+            bool partAdded = PlayerPrefs.GetInt("PartAdded-" + shopItems[i].name, 0) == 1 ? true : false;
             GameObject shopPart = boatItems[i];
             // Enable or disable rocket part gameobject according to partAdded value.
             shopPart.SetActive(partAdded);

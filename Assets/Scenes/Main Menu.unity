@@ -16325,6 +16325,7 @@ MonoBehaviour:
   rocket: {fileID: 1737418869}
   part: {fileID: 952253134}
   notEnough: {fileID: 531520409}
+  BoatPrefab: {fileID: 5629986599742869651, guid: e5b89a54f5b893544a94b1e764af39c8, type: 3}
   boat: {fileID: 492555759}
   shopPart: {fileID: 2000050749}
 --- !u!114 &1987714092

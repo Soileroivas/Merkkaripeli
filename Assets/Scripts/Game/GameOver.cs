@@ -17,6 +17,7 @@ public class GameOver : MonoBehaviour
     public static GameOver instance;
 
     private Animation anim;
+    InitializeAds ads;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class GameOver : MonoBehaviour
         priceText.text = continuePrice.ToString();
         crashed = false;
 
+        ads = Camera.main.GetComponent<InitializeAds>();
     }
     
 
@@ -34,6 +36,9 @@ public class GameOver : MonoBehaviour
         // Used to disable pause/resume function when player crashed.
         crashed = true;
         shipController.Crashed();
+
+        ads.ShowADS();
+
         // Play game over window open animation.
         anim.Play("Game-Over-In");
         // Disable game menu gameobject with all buttons.
