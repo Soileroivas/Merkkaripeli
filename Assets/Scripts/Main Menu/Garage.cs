@@ -140,7 +140,6 @@ public class Garage : MonoBehaviour
     private void LoadPart()
     {
         // Cycle between all shop parts.
-
         for (int i = 0; i < shopItems.Count; i++)
         {
             // Load shop part gameobject.

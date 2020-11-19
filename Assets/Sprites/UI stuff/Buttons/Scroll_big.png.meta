@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: a95f9c045bd862f478de88e4e4850235
+guid: 0fe6a01a0f402e3469508e9347b56cfa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6674758313285917887
-    second: Boat_base_1_0
+      213: 1196833310969986664
+    second: Scroll_big_0
+  - first:
+      213: -370715786781652975
+    second: Scroll_big_1
+  - first:
+      213: 9140533091846176924
+    second: Scroll_big_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -54,7 +60,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -128,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boat_base_1_0
+      name: Scroll_big_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 66
-        width: 260
-        height: 361
+        x: 31
+        y: 48
+        width: 1549
+        height: 1599
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,23 +148,55 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbc1ef0525181ac50800000000000000
-      internalID: 6674758313285917887
+      spriteID: 86e78b32e810c9010800000000000000
+      internalID: 1196833310969986664
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -26, y: 201}
-      - {x: -114, y: 79}
-      - {x: -132, y: 10}
-      - {x: -132, y: -63}
-      - {x: -73, y: -144}
-      - {x: -28, y: -164}
-      - {x: 58, y: -164}
-      - {x: 132, y: -107}
-      - {x: 132, y: 49}
-      - {x: 24, y: 202}
+    - serializedVersion: 2
+      name: Scroll_big_1
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 1630
+        width: 13
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1180040c4f3fadaf0800000000000000
+      internalID: -370715786781652975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scroll_big_2
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 409
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90c13d1b62b9de70800000000000000
+      internalID: 9140533091846176924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
