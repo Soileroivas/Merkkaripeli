@@ -583,8 +583,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 117038704}
-        m_TargetAssemblyTypeName: RocketController, Assembly-CSharp
+      - m_Target: {fileID: 1916056458}
+        m_TargetAssemblyTypeName: ShipController, Assembly-CSharp
         m_MethodName: MoveRight
         m_Mode: 1
         m_Arguments:
@@ -8153,8 +8153,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 117038704}
-        m_TargetAssemblyTypeName: RocketController, Assembly-CSharp
+      - m_Target: {fileID: 1916056458}
+        m_TargetAssemblyTypeName: ShipController, Assembly-CSharp
         m_MethodName: MoveLeft
         m_Mode: 1
         m_Arguments:
@@ -10985,6 +10985,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914042749}
   m_CullTransparentMesh: 0
+--- !u!114 &1916056458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5629986599742869645, guid: e5b89a54f5b893544a94b1e764af39c8, type: 3}
+  m_PrefabInstance: {fileID: 377765423}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63677be8dce9d5d44abd91128125cbec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1950563884
 GameObject:
   m_ObjectHideFlags: 0
