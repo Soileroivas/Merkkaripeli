@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
-
 public class ShipController : MonoBehaviour
 {
     [Range(0, 9.5f)]
@@ -33,7 +31,6 @@ public class ShipController : MonoBehaviour
         UpdatePosition();
         // Set obstacles speed.
         UpdateObstaclesSpeed(speed);
-
     }
 
     void Update()
