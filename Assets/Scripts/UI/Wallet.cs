@@ -8,8 +8,8 @@ public class Wallet : MonoBehaviour
 
     void Start()
     {
-        // Testausta varten oletusrahamäärä tässä 1000, eikä nolla:
-        amount = PlayerPrefs.GetInt("WalletAmount", 1000);
+        // Testausta varten oletusrahamäärä tässä 10000, eikä nolla:
+        amount = PlayerPrefs.GetInt("WalletAmount", 10000);
 
         walletText = this.GetComponent<TextMeshProUGUI>();
         DisplayAmount();

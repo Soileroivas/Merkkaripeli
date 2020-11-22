@@ -4,15 +4,18 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Garage : MonoBehaviour
+public class Shipyard : MonoBehaviour
 {
-    public GameObject buyButton, addButton, removeButton;
-    public TextMeshProUGUI partName, partPrice;
+    public GameObject buyButton, useButton, removeButton;
+
+    //public TextMeshProUGUI partName, partPrice;
+
+    public Text shipModel, shipModelPrice;
     public Transform rocket, part;
     public Animation notEnough;
 
-    public GameObject BoatPrefab;
-    public Transform boat, shopPart;
+    public GameObject ShipPrefab;
+    public Transform ship, shopModel;
     private List<GameObject> rocketItems, partItems;
 
     List<GameObject> boatItems, shopItems;
@@ -84,7 +87,7 @@ public class Garage : MonoBehaviour
         // Load remove button.
         LoadButton();
         // Load rocket with added part.
-        BoatPrefab.GetComponent<SpriteRenderer>().sprite = shopItems[partIndex].GetComponent<Image>().sprite;
+        ShipPrefab.GetComponent<SpriteRenderer>().sprite = shopItems[partIndex].GetComponent<Image>().sprite;
         LoadRocket();
     }
 
@@ -105,7 +108,7 @@ public class Garage : MonoBehaviour
         // Load parts for the rocket.
         boatItems = new List<GameObject>();
 
-        foreach (Transform item in boat)
+        foreach (Transform item in ship)
         {
             if (item.name != "Base")
                 boatItems.Add(item.gameObject);
@@ -115,7 +118,7 @@ public class Garage : MonoBehaviour
         // Load parts for the shop.
         shopItems = new List<GameObject>();
 
-        foreach (Transform item in shopPart)
+        foreach (Transform item in shopModel)
         {
             shopItems.Add(item.gameObject);
         }
@@ -149,7 +152,7 @@ public class Garage : MonoBehaviour
             if (i == partIndex)
             {
                 // Enable and change name for active part.
-                partName.text = shopPart.name;
+                shipModel.text = shopPart.name;
                 shopPart.SetActive(true);
             }
             else
@@ -185,7 +188,7 @@ public class Garage : MonoBehaviour
             // Display buy button with part price;
             DisplayButton(true, false, false);
             Part shopPart = shopItems[partIndex].GetComponent<Part>();
-            partPrice.text = shopPart.price.ToString();
+            shipModelPrice.text = shopPart.price.ToString();
         }
     }
 
@@ -200,9 +203,9 @@ public class Garage : MonoBehaviour
 
         if (add)
         {
-            ResetButtonRect(addButton);
+            ResetButtonRect(useButton);
         }
-        addButton.SetActive(add);
+        useButton.SetActive(add);
 
         if (remove)
         {
