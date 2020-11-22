@@ -1,37 +1,22 @@
 fileFormatVersion: 2
-guid: f88b7d69e1af84b4a87818291dbf9cc6
+guid: 5232d4c31d366144f90ecbf4584ee3a7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3951121162874072758
-    second: shop
+      213: -6715751925959074776
+    second: Buttons_white_0
   - first:
-      213: 1824538288893056458
-    second: reset
+      213: 8615922318448585544
+    second: Buttons_white_1
   - first:
-      213: 3247520538013584815
-    second: sound_off
+      213: -1430915256821020149
+    second: Buttons_white_2
   - first:
-      213: -8695695381994133817
-    second: vibration_off
+      213: 569747687139695866
+    second: Buttons_white_3
   - first:
-      213: 265771528070933801
-    second: Icons_2_4
-  - first:
-      213: -868760601263279499
-    second: vibration_on
-  - first:
-      213: -7042419175670095977
-    second: Icons_2_6
-  - first:
-      213: -3168886646009006091
-    second: sound_on
-  - first:
-      213: 8231521994849025956
-    second: camera
-  - first:
-      213: 4242050817141231021
-    second: Icons_2_9
+      213: 1690525265373209576
+    second: Buttons_white_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -155,148 +140,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shop
+      name: Buttons_white_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 278
-        width: 131
-        height: 133
+        x: 249
+        y: 1163
+        width: 1181
+        height: 401
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6be23a183c335d630800000000000000
-      internalID: 3951121162874072758
+      spriteID: 82c5095743bdcc2a0800000000000000
+      internalID: -6715751925959074776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: reset
+      name: Buttons_white_1
       rect:
         serializedVersion: 2
-        x: 164
-        y: 279
-        width: 127
-        height: 132
+        x: 495
+        y: 683
+        width: 788
+        height: 418
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac5d19c28ef025910800000000000000
-      internalID: 1824538288893056458
+      spriteID: 84bec7313b7e19770800000000000000
+      internalID: 8615922318448585544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sound_off
+      name: Buttons_white_2
       rect:
         serializedVersion: 2
-        x: 311
-        y: 286
-        width: 121
-        height: 118
+        x: 632
+        y: 679
+        width: 7
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fadc51529b2811d20800000000000000
-      internalID: 3247520538013584815
+      spriteID: b0a0f7db72e542ce0800000000000000
+      internalID: -1430915256821020149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vibration_off
+      name: Buttons_white_3
       rect:
         serializedVersion: 2
-        x: 17
-        y: 125
-        width: 135
-        height: 126
+        x: 269
+        y: 72
+        width: 594
+        height: 385
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c62c313f1fa25780800000000000000
-      internalID: -8695695381994133817
+      spriteID: afcdf87b08628e700800000000000000
+      internalID: 569747687139695866
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vibration_on
+      name: Buttons_white_4
       rect:
         serializedVersion: 2
-        x: 156
-        y: 126
-        width: 135
-        height: 126
+        x: 873
+        y: 93
+        width: 600
+        height: 404
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 572f8d606da81f3f0800000000000000
-      internalID: -868760601263279499
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sound_on
-      rect:
-        serializedVersion: 2
-        x: 316
-        y: 144
-        width: 119
-        height: 118
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f7772b826ad504d0800000000000000
-      internalID: -3168886646009006091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: camera
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 12
-        width: 143
-        height: 83
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4af7acf44ad3c3270800000000000000
-      internalID: 8231521994849025956
+      spriteID: 8e3a466a5c3f57710800000000000000
+      internalID: 1690525265373209576
       vertices: []
       indices: 
       edges: []

@@ -2,9 +2,10 @@
 
 public class ExitGame : MonoBehaviour
 {
-    public bool rateGameOnExit;
+    //public bool rateGameOnExit;
 
-    public RateGame rateGame;
+    //public RateGame rateGame;
+    public ConfirmExit confirmExit;
 
     private bool windowOpened;
 
@@ -25,17 +26,19 @@ public class ExitGame : MonoBehaviour
 
     public void Exit()
     {
-        // If rate game is enabled.
-        if(rateGameOnExit)
-        {
-            // Opens rate game window.
-            rateGame.OpenWindow();
-        }
-        else
-        {
-            //Closes game.
-            Application.Quit();
-        }
+
+        confirmExit.OpenWindow();
+        /* // If rate game is enabled.
+         if(rateGameOnExit)
+         {
+             // Opens rate game window.
+             rateGame.OpenWindow();
+         }
+         else
+         {
+             //Closes game.
+             Application.Quit();
+         }*/
     }
 
     // Used to set the windowOpened value if other window is opened.
