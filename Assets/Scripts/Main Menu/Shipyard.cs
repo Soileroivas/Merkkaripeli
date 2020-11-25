@@ -89,18 +89,19 @@ public class Shipyard : MonoBehaviour
         // Load rocket with added part.
         ShipPrefab.GetComponent<SpriteRenderer>().sprite = shopItems[partIndex].GetComponent<Image>().sprite;
         LoadRocket();
+
     }
 
     // When player press remove button.
-    public void Remove()
-    {
-        // Save removed part value.
-        PlayerPrefs.SetInt("PartAdded-" + shopItems[partIndex].name, 0);
-        // Load add button.
-        LoadButton();
-        // Load rocket with removed part.
-        LoadRocket();
-    }
+    //public void Remove()
+    //{
+    //    // Save removed part value.
+    //    PlayerPrefs.SetInt("PartAdded-" + shopItems[partIndex].name, 0);
+    //    // Load add button.
+    //    LoadButton();
+    //    // Load rocket with removed part.
+    //    LoadRocket();
+    //}
 
     // Loading parts
     private void LoadItems()
@@ -175,25 +176,25 @@ public class Shipyard : MonoBehaviour
             if (partAdded)
             {
                 // Display remove button.
-                DisplayButton(false, false, true);
+                DisplayButton(false, true/* true*/);
             }
             else
             {
                 // Display add button.
-                DisplayButton(false, true, false);
+                DisplayButton(false, true /*false*/);
             }
         }
         else
         {
             // Display buy button with part price;
-            DisplayButton(true, false, false);
+            DisplayButton(true, false /*false*/);
             Part shopPart = shopItems[partIndex].GetComponent<Part>();
             shipModelPrice.text = shopPart.price.ToString();
         }
     }
 
     // Changing between buttons.
-    private void DisplayButton(bool buy, bool add, bool remove)
+    private void DisplayButton(bool buy, bool add/*, bool remove*/)
     {
         if (buy)
         {
@@ -207,11 +208,11 @@ public class Shipyard : MonoBehaviour
         }
         useButton.SetActive(add);
 
-        if (remove)
-        {
-            ResetButtonRect(removeButton);
-        }
-        removeButton.SetActive(remove);
+        //if (remove)
+        //{
+        //    ResetButtonRect(removeButton);
+        //}
+        //removeButton.SetActive(remove);
     }
 
     // Each time button is loaded it's scale is reset to the default size.

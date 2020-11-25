@@ -17,7 +17,7 @@ public class GameOver : MonoBehaviour
     public static GameOver instance;
 
     private Animation anim;
-    InitializeAds ads;
+    //InitializeAds ads;
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class GameOver : MonoBehaviour
         priceText.text = continuePrice.ToString();
         crashed = false;
 
-        ads = Camera.main.GetComponent<InitializeAds>();
+        //ads = Camera.main.GetComponent<InitializeAds>();
     }
     
 
@@ -37,7 +37,7 @@ public class GameOver : MonoBehaviour
         crashed = true;
         shipController.Crashed();
 
-        ads.ShowADS();
+        //ads.ShowADS();
 
         // Play game over window open animation.
         anim.Play("Game-Over-In");
