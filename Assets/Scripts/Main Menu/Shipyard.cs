@@ -1,22 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 using UnityEngine.UI;
 
 public class Shipyard : MonoBehaviour
 {
     public GameObject buyButton, useButton, removeButton;
 
-    //public TextMeshProUGUI partName, partPrice;
+    public Text shipModelPrice;
 
-    public Text shipModel, shipModelPrice;
-    public Transform rocket, part;
+    //public Text shipModel;
+    //public Transform rocket, part;
+
     public Animation notEnough;
 
     public GameObject ShipPrefab;
-    public Transform ship, shopModel;
-    private List<GameObject> rocketItems, partItems;
+
+    //public Transform ship;
+
+    public Transform shopModel;
+
+    //private List<GameObject> rocketItems, partItems;
 
     List<GameObject> boatItems, shopItems;
 
@@ -25,7 +30,7 @@ public class Shipyard : MonoBehaviour
     void Start()
     {
         LoadItems();
-        LoadRocket();
+        LoadModel();
         LoadPart();
         LoadButton();
     }
@@ -38,6 +43,7 @@ public class Shipyard : MonoBehaviour
         {
             // Load previous part.
             partIndex--;
+            LoadModel();
             LoadPart();
             LoadButton();
         }
@@ -51,6 +57,7 @@ public class Shipyard : MonoBehaviour
         {
             // Loads next part.
             partIndex++;
+            LoadModel();
             LoadPart();
             LoadButton();
         }
@@ -88,20 +95,27 @@ public class Shipyard : MonoBehaviour
         LoadButton();
         // Load rocket with added part.
         ShipPrefab.GetComponent<SpriteRenderer>().sprite = shopItems[partIndex].GetComponent<Image>().sprite;
-        LoadRocket();
+        LoadModel();
 
     }
 
-    // When player press remove button.
-    //public void Remove()
-    //{
-    //    // Save removed part value.
-    //    PlayerPrefs.SetInt("PartAdded-" + shopItems[partIndex].name, 0);
-    //    // Load add button.
-    //    LoadButton();
-    //    // Load rocket with removed part.
-    //    LoadRocket();
-    //}
+    //When player press remove button.
+    public void Remove()
+    {
+        // Save removed part value. 
+        PlayerPrefs.SetInt("PartAdded-" + shopItems[partIndex].name, 0); 
+       
+        // Vaihtaa oletuslaivan, eli poistaa skinin
+        ShipPrefab.GetComponent<SpriteRenderer>().sprite = shopItems[0].GetComponent<Image>().sprite;
+
+        // Load rocket with removed part.
+        LoadModel();
+        // Load add button.
+        LoadButton();
+
+
+
+    }
 
     // Loading parts
     private void LoadItems()
@@ -109,12 +123,16 @@ public class Shipyard : MonoBehaviour
         // Load parts for the rocket.
         boatItems = new List<GameObject>();
 
+
+        /*
         foreach (Transform item in ship)
         {
             if (item.name != "Base")
                 boatItems.Add(item.gameObject);
 
         }
+
+        */
 
         // Load parts for the shop.
         shopItems = new List<GameObject>();
@@ -125,8 +143,8 @@ public class Shipyard : MonoBehaviour
         }
     }
 
-    //Load rocket parts.
-    private void LoadRocket()
+    //Load ship models.
+    private void LoadModel()
     {
         // Cycle between all rocket parts.
 
@@ -135,6 +153,7 @@ public class Shipyard : MonoBehaviour
             // Get value if rocket part is added.
             bool partAdded = PlayerPrefs.GetInt("PartAdded-" + shopItems[i].name, 0) == 1 ? true : false;
             GameObject shopPart = boatItems[i];
+
             // Enable or disable rocket part gameobject according to partAdded value.
             shopPart.SetActive(partAdded);
         }
@@ -153,7 +172,7 @@ public class Shipyard : MonoBehaviour
             if (i == partIndex)
             {
                 // Enable and change name for active part.
-                shipModel.text = shopPart.name;
+                //shipModel.text = shopPart.name;
                 shopPart.SetActive(true);
             }
             else
@@ -176,25 +195,25 @@ public class Shipyard : MonoBehaviour
             if (partAdded)
             {
                 // Display remove button.
-                DisplayButton(false, true/* true*/);
+                DisplayButton(false, false, true);
             }
             else
             {
                 // Display add button.
-                DisplayButton(false, true /*false*/);
+                DisplayButton(false, true, false);
             }
         }
         else
         {
             // Display buy button with part price;
-            DisplayButton(true, false /*false*/);
+            DisplayButton(true, false, false);
             Part shopPart = shopItems[partIndex].GetComponent<Part>();
             shipModelPrice.text = shopPart.price.ToString();
         }
     }
 
     // Changing between buttons.
-    private void DisplayButton(bool buy, bool add/*, bool remove*/)
+    private void DisplayButton(bool buy, bool add, bool remove)
     {
         if (buy)
         {
@@ -208,11 +227,11 @@ public class Shipyard : MonoBehaviour
         }
         useButton.SetActive(add);
 
-        //if (remove)
-        //{
-        //    ResetButtonRect(removeButton);
-        //}
-        //removeButton.SetActive(remove);
+        if (remove)
+        {
+            ResetButtonRect(removeButton);
+        }
+        removeButton.SetActive(remove);
     }
 
     // Each time button is loaded it's scale is reset to the default size.
