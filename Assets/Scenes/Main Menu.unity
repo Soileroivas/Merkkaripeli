@@ -232,7 +232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &63456259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -250,8 +250,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 12, y: 15}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 23.8, y: 15}
+  m_SizeDelta: {x: 323.69818, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!95 &63456260
 Animator:
@@ -7757,8 +7757,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.64, y: -4.1799927}
-  m_SizeDelta: {x: 208.72311, y: 82.64307}
+  m_AnchoredPosition: {x: 0, y: -8.6785}
+  m_SizeDelta: {x: 355.6666, y: 82.64307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614998054
 MonoBehaviour:
@@ -12083,7 +12083,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 898823380}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: LoadLevel
+        m_MethodName: LvlLoaderMainMenu
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
