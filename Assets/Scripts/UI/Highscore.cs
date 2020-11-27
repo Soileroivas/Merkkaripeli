@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using TMPro;
+
+using UnityEngine.UI;
 
 public class Highscore : MonoBehaviour
 {
@@ -7,13 +8,13 @@ public class Highscore : MonoBehaviour
 
     private static bool displayWithTextStatic;
     private static int amount;
-    private static TextMeshProUGUI highscoreText;
+    private static Text highscoreText;
 
     void Start()
     {
         displayWithTextStatic = displayWithText;
         amount = PlayerPrefs.GetInt("HighscoreAmount", 0);
-        highscoreText = this.GetComponent<TextMeshProUGUI>();
+        highscoreText = this.GetComponent<Text>();
         DisplayAmount();
     }
 

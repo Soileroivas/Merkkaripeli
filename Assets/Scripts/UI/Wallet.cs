@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Wallet : MonoBehaviour
 {
     private static int amount;
-    private static TextMeshProUGUI walletText;
+    private static Text walletText;
 
     void Start()
     {
         // Testausta varten oletusrahamäärä tässä 10000, eikä nolla:
         amount = PlayerPrefs.GetInt("WalletAmount", 10000);
 
-        walletText = this.GetComponent<TextMeshProUGUI>();
+        walletText = this.GetComponent<Text>();
         DisplayAmount();
     }
 

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using TMPro;
 using UnityEngine.Advertisements;
+using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class GameOver : MonoBehaviour
 
     public ShipController shipController;
     public GameObject menu;
-    public TextMeshProUGUI priceText;
+    public Text priceText;
     public Animation notEnough;
     public LevelLoader levelLoader;
     [HideInInspector]
@@ -62,6 +62,7 @@ public class GameOver : MonoBehaviour
         {
             //Play not enough money animation.
             notEnough.Play("Not-Enough-In");
+            
         }
     }
 }

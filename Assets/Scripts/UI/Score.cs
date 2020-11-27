@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
     public static bool continueGame;
     private static int amount;
-    private static TextMeshProUGUI scoreText;
+    private static Text scoreText;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
         }
 
         // Display score.
-        scoreText = this.GetComponent<TextMeshProUGUI>();
+        scoreText = this.GetComponent<Text>();
         DisplayAmount();
     }
 
