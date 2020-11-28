@@ -56,7 +56,7 @@ public class GameOver : MonoBehaviour
             // Used to check if following game if player has selected continue option.
             Score.continueGame = true;
             // Load game scene.
-            levelLoader.LoadLevel(1);  
+            levelLoader.LoadLevel(2);  
         }
         else
         {
