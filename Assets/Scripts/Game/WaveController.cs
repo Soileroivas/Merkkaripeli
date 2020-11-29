@@ -21,6 +21,11 @@ public class WaveController : MonoBehaviour
     {
         speed = ObstaclesLine.speed;
 
+        MoveWave();
+    }
+
+    private void MoveWave()
+    {
         if (transform.position != endPos)
         {
             // If player speed is higher than 0.
@@ -31,12 +36,13 @@ public class WaveController : MonoBehaviour
                 // Move wave to the end position
                 transform.position = Vector3.Lerp(startPos, endPos, duration);
 
-               
+
             }
         }
         else
         {
-            
+            startPos.y = 22;
+
             //Reset position and duration
             transform.position = startPos;
             duration = 0;
