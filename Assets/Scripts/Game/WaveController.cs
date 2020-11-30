@@ -4,48 +4,36 @@ using UnityEngine;
 
 public class WaveController : MonoBehaviour
 {
-    private float duration;
-    private Vector3 startPos, endPos;
-    private float speed;
-    // Start is called before the first frame update
+
+    [Range(0, 1f)]
+    public float waveSpawnRate;
+
+    public static WaveController instance;
+
+    private int lineIndex;
+
     void Start()
     {
-        startPos = transform.position;
-        
-        endPos = new Vector3(transform.position.x, startPos.y - 30, transform.position.z);
-
+        instance = this;
+        // Spawn line when game starts.
+        SpawnLine();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Used to spawn obstacle line.
+    public void SpawnLine()
     {
-        speed = ObstaclesLine.speed;
-
-        MoveWave();
+        // Create new line gameobject.
+        GameObject line = new GameObject("WaveLine-" + lineIndex);
+        // Make line gameobject child of current gameobject.
+        line.transform.parent = transform;
+        // Add ObstaclesLine script to the gameobject.
+        line.AddComponent<WavesLine>();
+       
+        // Increase line index.
+        lineIndex++;
     }
 
-    private void MoveWave()
-    {
-        if (transform.position != endPos)
-        {
-            // If player speed is higher than 0.
-            if (speed != 0)
-            {
-                // How long wave will travel end position.
-                duration += Time.deltaTime / (16 - speed);
-                // Move wave to the end position
-                transform.position = Vector3.Lerp(startPos, endPos, duration);
+ 
 
 
-            }
-        }
-        else
-        {
-            startPos.y = 22;
-
-            //Reset position and duration
-            transform.position = startPos;
-            duration = 0;
-        }
-    }
 }
