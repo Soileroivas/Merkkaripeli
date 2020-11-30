@@ -144,6 +144,7 @@ public class ShipController : MonoBehaviour
     private void UpdateObstaclesSpeed(float obstaclesSpeed)
     {
         ObstaclesLine.speed = obstaclesSpeed;
+        WavesLine.speed = obstaclesSpeed;
     }
 
     // Pause player controller.
