@@ -23,8 +23,8 @@ public class GameStartLoader : MonoBehaviour
 
     IEnumerator LoadLevelAsync(int sceneIndex)
     {
-        // Delay for door close animation.
-        yield return new WaitForSeconds(1.0f);
+        // Delay for download.
+        yield return new WaitForSeconds(2.0f);
 
         // Loading scene async and getting loading progress.
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
