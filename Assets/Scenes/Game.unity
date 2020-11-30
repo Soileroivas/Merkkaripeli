@@ -746,7 +746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd8af1e53e76a547ba78d3d5f4dc46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipController: {fileID: 0}
+  shipController: {fileID: 1916056458}
 --- !u!111 &393016764
 Animation:
   m_ObjectHideFlags: 0
