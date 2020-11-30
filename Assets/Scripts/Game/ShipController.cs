@@ -11,7 +11,7 @@ public class ShipController : MonoBehaviour
 
     public Transform parts;
 
-    public GameObject crashedParticles;
+    public GameObject shipTrail;
     
     private int lane = 0;
     private bool changingLanes;
@@ -169,7 +169,7 @@ public class ShipController : MonoBehaviour
         // Pause player controller.
         Pause();
         // Enable crash particles
-        crashedParticles.SetActive(true);
+        shipTrail.SetActive(false);
         
         #if UNITY_ANDROID || UNITY_IOS
             // If vibration is enabled then vibrate device.

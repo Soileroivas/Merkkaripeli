@@ -5,6 +5,7 @@ public class Settings : MonoBehaviour
 {
     public Sprite soundOn, soundOff, vibrationOn, vibrationOff;
     public Image soundImage, vibrationImage;
+    
 
     void Start()
     {

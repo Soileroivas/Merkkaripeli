@@ -8,15 +8,14 @@ public class Shipyard : MonoBehaviour
 {
     public GameObject buyButton, useButton, removeButton;
 
-    //public TextMeshProUGUI partName, partPrice;
-
+    
     public Text shipModel, shipModelPrice;
     public Transform rocket, part;
     public Animation notEnough;
 
     public GameObject ShipPrefab;
     public Transform ship, shopModel;
-    private List<GameObject> rocketItems, partItems;
+    
 
     List<GameObject> boatItems, shopItems;
 
