@@ -10,7 +10,7 @@ public class LevelLoader : MonoBehaviour
 
     private Animation anim;
 
-    InitializeAds ads;
+    //InitializeAds ads;
 
 
     void Start()
@@ -22,14 +22,14 @@ public class LevelLoader : MonoBehaviour
         {
             anim.Play("OpenDoors");
         }
-        ads = Camera.main.GetComponent<InitializeAds>();
+        //ads = Camera.main.GetComponent<InitializeAds>();
     }
 
     // Used to load next level.
     public void LoadLevel(int sceneIndex)
     {
         
-        ads.ShowADS();
+        //ads.ShowADS();
         // Play close door animation.
         anim.Play("CloseDoors");
         // Load scene async.
