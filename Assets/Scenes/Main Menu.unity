@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 171126905}
   - component: {fileID: 171126904}
   m_Layer: 5
-  m_Name: Base_0
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12833,8 +12833,6 @@ MonoBehaviour:
   removeButton: {fileID: 1382968923}
   shipModel: {fileID: 1899698872}
   shipModelPrice: {fileID: 1268233707}
-  rocket: {fileID: 0}
-  part: {fileID: 0}
   notEnough: {fileID: 1037387255}
   ShipPrefab: {fileID: 5629986599742869651, guid: e5b89a54f5b893544a94b1e764af39c8, type: 3}
   ship: {fileID: 5629986599742869650, guid: e5b89a54f5b893544a94b1e764af39c8, type: 3}

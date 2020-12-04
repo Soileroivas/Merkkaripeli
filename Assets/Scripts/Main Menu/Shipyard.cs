@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
@@ -10,7 +9,7 @@ public class Shipyard : MonoBehaviour
 
     
     public Text shipModel, shipModelPrice;
-    public Transform rocket, part;
+    //public Transform rocket, part;
     public Animation notEnough;
 
     public GameObject ShipPrefab;
