@@ -5,26 +5,27 @@ using UnityEngine.UI;
 
 public class Shipyard : MonoBehaviour
 {
-    public GameObject buyButton, useButton, removeButton;
+    public GameObject buyButton, useButton, removeButton, skinPrice;
 
     
-    public Text shipModel, shipModelPrice;
+    public Text shipModelName, shipModelPrice, skinState;
     //public Transform rocket, part;
     public Animation notEnough;
 
-    public GameObject ShipPrefab;
-    public Transform ship, shopModel;
-    
+    //public GameObject ShipPrefab;
+    public Transform ship, shopSkins;
+
+    public string activeSkin;
 
     List<GameObject> boatItems, shopItems;
 
-    private int partIndex = 0;
+    private int modelIndex = 0;
 
     void Start()
     {
         LoadItems();
-        LoadRocket();
-        LoadPart();
+        LoadActiveModel();
+        LoadShopModel();
         LoadButton();
     }
 
@@ -32,11 +33,11 @@ public class Shipyard : MonoBehaviour
     public void Previous()
     {
         // Check whether the active part is not the first.
-        if (partIndex > 0)
+        if (modelIndex > 0)
         {
             // Load previous part.
-            partIndex--;
-            LoadPart();
+            modelIndex--;
+            LoadShopModel();
             LoadButton();
         }
     }
@@ -45,11 +46,11 @@ public class Shipyard : MonoBehaviour
     public void Next()
     {
         // Check whether the active part is not the last.
-        if (partIndex < shopItems.Count - 1)
+        if (modelIndex < shopItems.Count - 1)
         {
             // Loads next part.
-            partIndex++;
-            LoadPart();
+            modelIndex++;
+            LoadShopModel();
             LoadButton();
         }
     }
@@ -58,13 +59,13 @@ public class Shipyard : MonoBehaviour
     public void Buy()
     {
         // Take part script from the active part.
-        Part part = shopItems[partIndex].GetComponent<Part>();
+        Part part = shopItems[modelIndex].GetComponent<Part>();
 
         // Check if player has enough money to buy a part.
         if (Wallet.GetAmount() >= part.price)
         {
             // Save bought part value.
-            PlayerPrefs.SetInt("PartBought-" + shopItems[partIndex].name, 1);
+            PlayerPrefs.SetInt("SkinBought-" + shopItems[modelIndex].name, 1);
             // Loas add/remove button.
             LoadButton();
             // Subract part price from player wallet.
@@ -78,121 +79,156 @@ public class Shipyard : MonoBehaviour
     }
 
     // When player press add button.
-    public void Add()
+    public void Use()
     {
         // Save added part value.
-        PlayerPrefs.SetInt("PartAdded-" + shopItems[partIndex].name, 1);
-        // Load remove button.
+        PlayerPrefs.SetString("ActiveSkin-", shopItems[modelIndex].name);
+        // Load remove button. 
+        LoadActiveModel();
         LoadButton();
         // Load rocket with added part.
-        ShipPrefab.GetComponent<SpriteRenderer>().sprite = shopItems[partIndex].GetComponent<Image>().sprite;
-        LoadRocket();
+
+        //ShipPrefab.GetComponent<SpriteRenderer>().sprite = shopItems[modelIndex].GetComponent<Image>().sprite;
+       
 
     }
 
     // When player press remove button.
-    //public void Remove()
-    //{
-    //    // Save removed part value.
-    //    PlayerPrefs.SetInt("PartAdded-" + shopItems[partIndex].name, 0);
-    //    // Load add button.
-    //    LoadButton();
-    //    // Load rocket with removed part.
-    //    LoadRocket();
-    //}
+    public void Remove()
+    {
+        // Save removed part value.
+        PlayerPrefs.SetString("ActiveSkin-", null);
+        // Load add button.
+        LoadActiveModel();
+        LoadButton();
+        // Load rocket with removed part.
+        
+    }
 
-    // Loading parts
+    // Loading parts at the start
     private void LoadItems()
     {
-        // Load parts for the rocket.
+        // Load parts for the ship.
         boatItems = new List<GameObject>();
+        activeSkin = PlayerPrefs.GetString("ActiveSkin-", null);
 
         foreach (Transform item in ship)
         {
-            if (item.name != "Base")
-                boatItems.Add(item.gameObject);
+            if (item.name == activeSkin) 
+            {
+                item.gameObject.SetActive(true);
+            }
+            else
+            {
+                item.gameObject.SetActive(false);
+            }
+                
 
         }
 
         // Load parts for the shop.
         shopItems = new List<GameObject>();
 
-        foreach (Transform item in shopModel)
+        foreach (Transform item in shopSkins)
         {
             shopItems.Add(item.gameObject);
         }
     }
 
-    //Load rocket parts.
-    private void LoadRocket()
+    //Load ship parts.
+    private void LoadActiveModel()
     {
-        // Cycle between all rocket parts.
+        // Cycle between all ship skins.
 
         for (int i = 0; i < boatItems.Count; i++)
         {
+
             // Get value if rocket part is added.
-            bool partAdded = PlayerPrefs.GetInt("PartAdded-" + shopItems[i].name, 0) == 1 ? true : false;
+            activeSkin = PlayerPrefs.GetString("ActiveSkin-", null);
             GameObject shopPart = boatItems[i];
-            // Enable or disable rocket part gameobject according to partAdded value.
-            shopPart.SetActive(partAdded);
+            // Enable or disable shop model gameobject according to partAdded value.
+           if (shopPart.name == activeSkin)
+            {
+                shopPart.SetActive(true);
+            }
+            else
+            {
+                shopPart.SetActive(false);
+            }
         }
     }
 
-    // Loading shop parts.
-    private void LoadPart()
+    // Load only next/previous model, and sets active/false
+    private void LoadShopModel()
     {
         // Cycle between all shop parts.
         for (int i = 0; i < shopItems.Count; i++)
         {
             // Load shop part gameobject.
-            GameObject shopPart = shopItems[i];
+            GameObject shopModel = shopItems[i];
 
             // Check the active part.
-            if (i == partIndex)
+            if (i == modelIndex)
             {
                 // Enable and change name for active part.
-                shipModel.text = shopPart.name;
-                shopPart.SetActive(true);
+                shipModelName.text = shopModel.name;
+                shopModel.SetActive(true);
             }
             else
             {
                 // Otherwise disable part gameobject.
-                shopPart.SetActive(false);
+                shopModel.SetActive(false);
             }
         }
     }
 
     // Load button according to the part state.
     private void LoadButton()
-    {
+    {   
+        
+        
+        activeSkin = PlayerPrefs.GetString("ActiveSkin-", null);
         // Get value if part is bought.
-        bool partBought = PlayerPrefs.GetInt("PartBought-" + shopItems[partIndex].name, 0) == 1 ? true : false;
-        if (partBought)
+        bool skinBought = PlayerPrefs.GetInt("SkinBought-" + shopItems[modelIndex].name, 0) == 1 ? true : false;
+        if (skinBought)
         {
+            skinPrice.SetActive(false);
+            skinState.gameObject.SetActive(true);
             // Get value if part is added to the rocket.
-            bool partAdded = PlayerPrefs.GetInt("PartAdded-" + shopItems[partIndex].name, 0) == 1 ? true : false;
-            if (partAdded)
+
+
+            if (shopItems[modelIndex].name == activeSkin)
             {
                 // Display remove button.
-                DisplayButton(false, true/* true*/);
+                DisplayButton(false, false, true);
+                skinState.text = "Selected";
+
+                if (shopItems[modelIndex].name == "Default")
+                {
+                    skinState.text = "Default";
+
+                }
             }
             else
             {
+                skinState.text = "Bought";
                 // Display add button.
-                DisplayButton(false, true /*false*/);
+                DisplayButton(false, true, false);
             }
         }
         else
         {
+            skinPrice.SetActive(true);
+            skinState.gameObject.SetActive(false);
             // Display buy button with part price;
-            DisplayButton(true, false /*false*/);
-            Part shopPart = shopItems[partIndex].GetComponent<Part>();
+            DisplayButton(true, false, false);
+            Part shopPart = shopItems[modelIndex].GetComponent<Part>();
             shipModelPrice.text = shopPart.price.ToString();
         }
     }
 
     // Changing between buttons.
-    private void DisplayButton(bool buy, bool add/*, bool remove*/)
+    private void DisplayButton(bool buy, bool use, bool remove)
     {
         if (buy)
         {
@@ -200,17 +236,17 @@ public class Shipyard : MonoBehaviour
         }
         buyButton.SetActive(buy);
 
-        if (add)
+        if (use)
         {
             ResetButtonRect(useButton);
         }
-        useButton.SetActive(add);
+        useButton.SetActive(use);
 
-        //if (remove)
-        //{
-        //    ResetButtonRect(removeButton);
-        //}
-        //removeButton.SetActive(remove);
+        if (remove)
+        {
+            ResetButtonRect(removeButton);
+        }
+        removeButton.SetActive(remove);
     }
 
     // Each time button is loaded it's scale is reset to the default size.

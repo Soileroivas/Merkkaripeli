@@ -4,34 +4,34 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 977936959441238766
-    second: Ship_00_default
+    second: 01_Default
   - first:
       213: 7553633584019388975
-    second: Ship_2
+    second: 02_Red_Sails
   - first:
       213: 4635586242528595680
-    second: Ship_3
+    second: 03_Red_Skull
   - first:
       213: 1602195291271876860
-    second: Ship_4
+    second: 04_Scarlet_Envy
   - first:
       213: 5540443551390645815
-    second: Ship_5
+    second: 09_Blackout
   - first:
       213: 9221814444814821194
-    second: Ship_6
+    second: 07_Camo
   - first:
       213: -7423459134850049352
-    second: Ship_7
+    second: 06_Crimson_Threat
   - first:
       213: -4204979384717119114
-    second: Ship_8
+    second: 05_Sassy_Pink
   - first:
       213: 6055258363766954649
-    second: Ship_9
+    second: 08_Pinkissimo
   - first:
       213: 2291994272584357921
-    second: Ship_duck
+    second: 10_Rubber_Duck
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -155,7 +155,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ship_00_default
+      name: 01_Default
       rect:
         serializedVersion: 2
         x: 1
@@ -176,7 +176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_2
+      name: 02_Red_Sails
       rect:
         serializedVersion: 2
         x: 266
@@ -197,7 +197,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_3
+      name: 03_Red_Skull
       rect:
         serializedVersion: 2
         x: 533
@@ -218,7 +218,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_4
+      name: 04_Scarlet_Envy
       rect:
         serializedVersion: 2
         x: 803
@@ -239,7 +239,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_5
+      name: 09_Blackout
       rect:
         serializedVersion: 2
         x: 1074
@@ -260,7 +260,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_6
+      name: 07_Camo
       rect:
         serializedVersion: 2
         x: 1
@@ -281,7 +281,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_7
+      name: 06_Crimson_Threat
       rect:
         serializedVersion: 2
         x: 266
@@ -302,7 +302,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_8
+      name: 05_Sassy_Pink
       rect:
         serializedVersion: 2
         x: 539
@@ -323,7 +323,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_9
+      name: 08_Pinkissimo
       rect:
         serializedVersion: 2
         x: 803
@@ -344,7 +344,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ship_duck
+      name: 10_Rubber_Duck
       rect:
         serializedVersion: 2
         x: 1080

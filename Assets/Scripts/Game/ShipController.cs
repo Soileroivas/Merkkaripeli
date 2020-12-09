@@ -9,7 +9,7 @@ public class ShipController : MonoBehaviour
     [Range(0, 2.0f)]
     public float changeLanesSpeed = 2.0f;
 
-    public Transform parts;
+    public Transform shipModels;
 
     public GameObject shipTrail;
     
@@ -27,7 +27,7 @@ public class ShipController : MonoBehaviour
         anim = this.GetComponent<Animation>();
         audioSource = this.GetComponent<AudioSource>();
         // Load rocket.
-        LoadRocket();
+        LoadShipModel();
         // Reset rocket position.
         UpdatePosition();
         // Set obstacles speed.
@@ -114,17 +114,19 @@ public class ShipController : MonoBehaviour
     }
 
     // Load player rocket.
-    private void LoadRocket()
+    private void LoadShipModel()
     {
+        string activeSkin = PlayerPrefs.GetString("ActiveSkin-", "Default");
         // Cycle between all rocket parts.
-        foreach(Transform part in parts)
+        foreach (Transform skin in shipModels)
         {
-            if(part.name != "Base")
+            if(skin.name == activeSkin)
             {
-                // Get value if rocket part is added.
-                bool partAdded = PlayerPrefs.GetInt("PartAdded-" + part.name, 0) == 1 ? true : false;
-                // Set rocket part gameobject state to active or disabled according to partAdded value.
-                part.gameObject.SetActive(partAdded);
+                skin.gameObject.SetActive(true);
+            }
+            else
+            {
+                skin.gameObject.SetActive(false);
             }
         }
     }
