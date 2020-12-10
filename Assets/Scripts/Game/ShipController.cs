@@ -113,11 +113,11 @@ public class ShipController : MonoBehaviour
         }     
     }
 
-    // Load player rocket.
+    // Load ship correct ship skin from pf
     private void LoadShipModel()
     {
-        string activeSkin = PlayerPrefs.GetString("ActiveSkin-", "Default");
-        // Cycle between all rocket parts.
+        string activeSkin = PlayerPrefs.GetString("ActiveSkin-");
+        // Cycle between all ship models.
         foreach (Transform skin in shipModels)
         {
             if(skin.name == activeSkin)

@@ -97,7 +97,7 @@ public class Shipyard : MonoBehaviour
     public void Remove()
     {
         // Save removed part value.
-        PlayerPrefs.SetString("ActiveSkin-", null);
+        PlayerPrefs.SetString("ActiveSkin-", "Default");
         // Load add button.
         LoadActiveModel();
         LoadButton();
@@ -110,7 +110,7 @@ public class Shipyard : MonoBehaviour
     {
         // Load parts for the ship.
         boatItems = new List<GameObject>();
-        activeSkin = PlayerPrefs.GetString("ActiveSkin-", null);
+        activeSkin = PlayerPrefs.GetString("ActiveSkin-");
 
         foreach (Transform item in ship)
         {
@@ -144,7 +144,7 @@ public class Shipyard : MonoBehaviour
         {
 
             // Get value if rocket part is added.
-            activeSkin = PlayerPrefs.GetString("ActiveSkin-", null);
+            activeSkin = PlayerPrefs.GetString("ActiveSkin-");
             GameObject shopPart = boatItems[i];
             // Enable or disable shop model gameobject according to partAdded value.
            if (shopPart.name == activeSkin)
@@ -187,7 +187,7 @@ public class Shipyard : MonoBehaviour
     {   
         
         
-        activeSkin = PlayerPrefs.GetString("ActiveSkin-", null);
+        activeSkin = PlayerPrefs.GetString("ActiveSkin-");
         // Get value if part is bought.
         bool skinBought = PlayerPrefs.GetInt("SkinBought-" + shopItems[modelIndex].name, 0) == 1 ? true : false;
         if (skinBought)
@@ -206,6 +206,7 @@ public class Shipyard : MonoBehaviour
                 if (shopItems[modelIndex].name == "Default")
                 {
                     skinState.text = "Default";
+                    DisplayButton(false, false, false);
 
                 }
             }
